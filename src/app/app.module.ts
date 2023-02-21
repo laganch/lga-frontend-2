@@ -24,6 +24,7 @@ import { MarriageComponent } from './module/marriage/marriage.component';
 import { TopMenuComponent } from './navigation/top-menu/top-menu.component';
 import { DeathApplicationComponent } from './module/death-application/death-application.component';
 import { MarriageApplicationComponent } from './module/marriage-application/marriage-application.component';
+import { LandingPageComponent } from './navigation/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MarriageApplicationComponent } from './module/marriage-application/marr
     MarriageComponent,
     TopMenuComponent,
     DeathApplicationComponent,
-    MarriageApplicationComponent
+    MarriageApplicationComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
