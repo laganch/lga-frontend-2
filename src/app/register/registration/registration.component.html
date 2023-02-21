@@ -1,0 +1,36 @@
+<div class="">
+    <div class="container-fluid">&nbsp;                 
+        <div class="col-lg-4 col-md-12" style="margin: 0 auto;">
+                    <div style="margin-left: 25%;">
+                        <img src="./assets/login.png" height="160" width="160">
+                    </div>
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                    <a name="login"></a>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-9">
+                           <form  id="LoginStartForm" [formGroup]='mainForm' (ngSubmit)='save()'>
+
+                            <app-step-one *ngIf="step == 1"></app-step-one>
+                            <app-step-two *ngIf="step == 2"></app-step-two>
+                            <app-step-three *ngIf="step == 3"></app-step-three>
+                            <div class="submit d-flex justify-content-between">
+                                <button class="btn btn-danger pull-right" type="button" *ngIf="step != 1" (click)="back()">Previous &nbsp; <i class="fa fc-text-back" ></i></button>
+                                <button class="btn btn-primary pull-right" type="button" *ngIf="step != 3" (click)="next()">Next &nbsp; <i class="fa fc-text-arrow" ></i></button>
+                                <button class="btn btn-primary pull-right" type="submit" *ngIf="step == 3" [disabled]="mainForm.invalid">Submit &nbsp; <i class="fa fc-text-arrow" ></i></button>
+                            </div>
+                                            
+                            </form> 
+                            <p style="text-align: right;">
+                               Have Account? <a href="login">Login</a>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+                

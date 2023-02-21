@@ -1,0 +1,37 @@
+<ng-container [formGroup]="form">
+  <div formGroupName="loginDetails">
+    <div class="input email">
+      <label for="LoginEmail">Email</label>
+      <input
+        name="email"
+        class="form-control"
+        formControlName="userName"
+        required="required"
+        type="email"
+        id="LoginEmail"
+      />
+    </div>
+    <div class="input password">
+      <label for="LoginPassword">Password</label>
+      <input
+        name="password"
+        class="form-control"
+        formControlName="password"
+        required="required"
+        type="password"
+        id="LoginPassword"
+      />
+    </div>
+    <div class="input password">
+      <label for="LoginPassword">Confirm Password</label>
+      <input
+        name="cpassword"
+        class="form-control"
+        formControlName="cpassword"
+        required="required"
+        type="password"
+        id="LoginPassword"
+      />
+    </div>
+  </div>
+</ng-container>

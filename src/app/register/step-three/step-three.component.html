@@ -1,0 +1,42 @@
+<ng-container [formGroup]="form">
+    <div formGroupName="stateDetails">
+        <div class="input email">
+            <label for="LoginEmail">State</label>
+            <select
+                (change)="getLga()"
+                class="form-control form-control-sm"
+                formControlName="state"
+                name="state"
+                id="state">
+                <option >Select State</option>
+                <option *ngFor="let row of state"  [ngValue]="row?.id">
+                    {{ row.name}}</option>
+            </select>
+        </div>
+        <div class="input email">
+            <label for="LoginEmail">LGA</label>
+            <select
+                (change)="getArea()"
+                class="form-control form-control-sm"
+                formControlName="lga"
+                name="lga"
+                id="lga">
+                <option >Select State</option>
+                <option *ngFor="let row of lga"  [ngValue]="row?.id">
+                    {{ row.name}}</option>
+            </select>
+        </div>
+        <div class="input email">
+            <label for="LoginEmail">Area</label>
+            <select
+                class="form-control form-control-sm"
+                formControlName="area"
+                name="area"
+                id="area">
+                <option >Select State</option>
+                <option *ngFor="let row of area"  [ngValue]="row?.id">
+                    {{ row.name}}</option>
+            </select>
+        </div>
+    </div>
+</ng-container>

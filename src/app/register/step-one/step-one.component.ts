@@ -1,0 +1,28 @@
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { CredentialsService } from 'src/app/core/authentication/credentials.service';
+import { LoginContext } from 'src/app/models/login-context.model';
+import { ApiService } from 'src/services/api.service';
+
+@Component({
+  selector: 'app-step-one',
+  templateUrl: './step-one.component.html',
+  styleUrls: ['./step-one.component.css']
+})
+export class StepOneComponent implements OnInit{
+  form!:FormGroup;
+
+
+  constructor(
+    private rootFormGroup:FormGroupDirective
+  ){
+  }
+  ngOnInit(): void {
+    this.form = this.rootFormGroup.control;
+  }
+
+
+
+}

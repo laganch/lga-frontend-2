@@ -1,0 +1,36 @@
+                <!-- Page Content-->
+<div class="wrapper">
+    <div class="container-fluid">&nbsp;                 
+        <div class="col-lg-4 col-md-12" style="margin: 0 auto;">
+                    <div style="margin-left: 25%;">
+                        <img src="./assets/login.png" height="160" width="160">
+                    </div>
+                <div class="card" style="margin-top: 30px;">
+                    <div class="card-body">
+                    <a name="login"></a>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-9">
+                           <form  id="LoginStartForm" [formGroup]='loginForm' (ngSubmit)='handleLogin()'>
+                               <div class="input email">
+                                    <label for="LoginEmail">Email</label>
+                                    <input name="email" class="form-control" formControlName="userName" required="required" type="email" id="LoginEmail"/>
+                                </div>
+                               <div class="input password">
+                                    <label for="LoginPassword">Password</label>
+                                    <input name="password" class="form-control" formControlName="password" required="required" type="password" id="LoginPassword"/>
+                                </div>
+                               <div class="submit">
+                                    <input class="btn btn-primary pull-right" type="submit"  value="Log in" [disabled]="loginForm.invalid"/>
+                               </div>                                                
+                            </form> 
+                            <p style="text-align: right;">
+                                Dont Have Account? <a href="register">Register.</a>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

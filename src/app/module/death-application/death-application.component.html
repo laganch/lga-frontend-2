@@ -1,0 +1,218 @@
+   <!-- Pre-loader start -->
+   <div class="theme-loader">
+    <div class="loader-track">
+        <div class="loader-bar"></div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <app-main-top-menu></app-main-top-menu>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <app-side-nav></app-side-nav>
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <!-- Page-header start -->
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="m-b-10">New Application</h5>
+                                        </div>
+                                        
+                                        <ul class="breadcrumb-title b-t-default p-t-10">
+                                            <li class="breadcrumb-item">
+                                                <a href="/"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="/admin/death-certificate">Death-Certificate</a></li>
+                                            <li class="breadcrumb-item"><a href="/admin/death/application">Application</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                <!-- Basic Form Inputs card start -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-header-right"><i
+                                            class="icofont icofont-spinner-alt-5"></i></div>
+
+                                            <div class="card-header-right">
+                                                <i class="icofont icofont-spinner-alt-5"></i>
+                                            </div>
+
+                                        </div>
+                                        <form [formGroup]='ApplicationForm' (ngSubmit)='Save()'>
+                                            <div class="card-block">
+                                                <h4 class="sub-title" style="text-align: center;">DEATH APPLICATION</h4>
+                                                <div class="row ">
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="First Name of deceased"
+                                                                formControlName="deceasedFirstName">
+                                                                <!-- <div class="col-form-label">Success! You've done it.</div> -->
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Last Name of deceased"
+                                                                formControlName="deceasedLastName">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Middle Name of deceased"
+                                                                formControlName="deceasedMiddleName">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="sub-title"></h4>
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="Address of deceased"
+                                                                formControlName="deceasedAddress">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Landmark"
+                                                                formControlName="deceasedLandmark">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Nearest Busstop"
+                                                                formControlName="deceasedbusstop">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="sub-title"></h4>
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="Deceased Occupation"
+                                                                formControlName="deceasedOccupation">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="sub-title"></h4>
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4">
+                                                                <label for="first_name">Died on</label>
+                                                                <input type="date"
+                                                                class="form-control form-txt-danger"
+                                                                formControlName="deathDate">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label for="first_name">Buried on</label>
+                                                                <input type="date"
+                                                                class="form-control form-txt-success"
+                                                                formControlName="buriedDate">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label for="first_name">Approval Hospital</label>
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Name of hospital"
+                                                                formControlName="hospital">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <h4 class="sub-title"></h4>
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="Applicatants First Name"
+                                                                formControlName="applicantFirstName">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Applicatants last Name"
+                                                                formControlName="applicantLastName">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <select 
+                                                                    name="relationship"
+                                                                    formControlName="relationship" 
+                                                                    id="" 
+                                                                    class="form-control form-txt-success">
+                                                                    <option>Select Applicant's Relationship</option>
+                                                                    <option>Wife</option>
+                                                                    <option >Sister</option>
+                                                                    <option>Brother</option>
+                                                                    <option>Son</option>
+                                                                    <option>Daughter</option>
+                                                                    <option>Mother</option>
+                                                                    <option>Father</option>
+                                                                    <option>Neice</option>
+                                                                    <option >Nephew</option>
+                                                                    <option>Husband</option>
+                                                                    <option>Cousin</option>
+                                                                    <option>Uncle</option>
+                                                                    <option>Aunt</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <h4 class="sub-title"></h4>
+                                                        <div class="col-sm-12 mobile-inputs">
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-4">
+                                                                    <input type="text"
+                                                                    class="form-control form-txt-danger"
+                                                                    placeholder="Applicant's phone number"
+                                                                    formControlName="applicantPhonenumber">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text"
+                                                                    class="form-control form-txt-success"
+                                                                    placeholder="Alternative phone number"
+                                                                    formControlName="alternateNumber">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text"
+                                                                    class="form-control form-txt-success"
+                                                                    placeholder="Applicant's Occupation"
+                                                                    formControlName="applicantOccupation">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row filter" style="margin-top: 30px;">
+                                                        <div class="col-sm-12 mobile-inputs d-flex justify-content-between">
+                                                            <button class="btn btn-danger">Cancel</button>
+                                                            <button class="btn btn-success">Submit for Approval</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Basic Form Inputs card end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                
+            </div>
+        </div>
+    </div>
