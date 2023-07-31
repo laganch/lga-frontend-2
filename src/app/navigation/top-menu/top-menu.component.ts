@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent {
+  
 handleLogout() {
 throw new Error('Method not implemented.');
 }

@@ -1,0 +1,19 @@
+.top-p{
+    margin: 0;
+    padding: 0;
+}
+
+.right-parent{
+    border-bottom: 2px dotted;
+}
+.left-parent{
+    /* margin-right: 15px; */
+    margin-left: 10px;
+}
+.parent{
+    width: 70%;
+    margin: 0 auto;
+    background: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}

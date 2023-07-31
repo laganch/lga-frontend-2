@@ -1,1 +1,86 @@
-<p>marriage-application works!</p>
+   <!-- Pre-loader start -->
+   <div class="theme-loader">
+    <div class="loader-track">
+        <div class="loader-bar"></div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <app-main-top-menu></app-main-top-menu>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <app-side-nav></app-side-nav>
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <!-- Page-header start -->
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="m-b-10">New Application</h5>
+                                        </div>
+                                        
+                                        <ul class="breadcrumb-title b-t-default p-t-10">
+                                            <li class="breadcrumb-item">
+                                                <a href="/"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="/admin/death-certificate">Marriage-Certificate</a></li>
+                                            <li class="breadcrumb-item"><a href="/admin/death/application">Application</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                <!-- Basic Form Inputs card start -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-header-right"><i
+                                            class="icofont icofont-spinner-alt-5"></i></div>
+
+                                            <div class="card-header-right">
+                                                <i class="icofont icofont-spinner-alt-5"></i>
+                                            </div>
+
+                                        </div>
+                                        <form [formGroup]='ApplicationForm' (ngSubmit)='Save()'>
+                                            <div class="card-block">
+                                                <h4 class="sub-title" style="text-align: center;">MARRIAGE APPLICATION</h4>
+                                                <div class="row ">
+                                                    <app-step-one-marriage *ngIf="step == 1"></app-step-one-marriage>
+                                                    <app-step-two-marriage *ngIf="step == 2"></app-step-two-marriage>
+                                                    <app-step-three-marriage *ngIf="step == 3"></app-step-three-marriage>
+                                                    <app-step-four *ngIf="step == 4"></app-step-four>
+                                                    <app-step-five *ngIf="step == 5"></app-step-five>
+                                                    <app-step-six *ngIf="step == 6"></app-step-six>
+
+                                                    
+                                                    <div class="col-sm-12 ">
+                                                        <div class="submit ">
+                                                            <button class="btn btn-danger pull-right" type="button" *ngIf="step != 1" (click)="back()">Previous &nbsp; <i class="fa fc-text-back" ></i></button>
+                                                            <button class="btn btn-primary pull-right" type="button" *ngIf="step != 6" (click)="next()">Next &nbsp; <i class="fa fc-text-arrow" ></i></button>
+                                                            <button class="btn btn-primary pull-right" type="submit" *ngIf="step == 6" [disabled]="ApplicationForm.invalid">Submit &nbsp; <i class="fa fc-text-arrow" ></i></button>
+                                                        </div>
+                                                                
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Basic Form Inputs card end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                
+            </div>
+        </div>
+    </div>

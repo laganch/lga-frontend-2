@@ -1,0 +1,190 @@
+   <!-- Pre-loader start -->
+   <div class="theme-loader">
+    <div class="loader-track">
+        <div class="loader-bar"></div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <app-main-top-menu></app-main-top-menu>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <app-side-nav></app-side-nav>
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <!-- Page-header start -->
+                                <div class="page-header card">
+                                    <div class="card-block">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="m-b-10">Affidevit Application</h5>
+                                            <a href="/admin/affidevitrth/application" class="m-b-10">New Application</a>
+                                        </div>
+                                        
+                                        <ul class="breadcrumb-title b-t-default p-t-10">
+                                            <li class="breadcrumb-item">
+                                                <a href="/"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="/admin/dashboard">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="/admin/affidevit">Affidevit</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                <!-- Basic Form Inputs card start -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-header-right"><i
+                                            class="icofont icofont-spinner-alt-5"></i></div>
+
+                                            <div class="card-header-right">
+                                                <i class="icofont icofont-spinner-alt-5"></i>
+                                            </div>
+
+                                        </div>
+                                        <form [formGroup]='ApplicationForm' (ngSubmit)='Search()'>
+                                            <div class="card-block">
+                                                <h4 class="sub-title">Search Filter</h4>
+                                                <div class="row">
+                                                    <div class="col-sm-6 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="Application Id"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Phone Number"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <input type="text"
+                                                                class="form-control form-txt-inverse"
+                                                                placeholder="E-mail"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text"
+                                                                class="form-control form-txt-info"
+                                                                placeholder="NIN"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <input type="date"
+                                                                class="form-control form-bg-danger"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="date"
+                                                                class="form-control form-bg-success"
+                                                                formControlName="applicationId">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <select name="select" class="form-control"  formControlName="applicationId">
+                                                                    <option value="opt1">Select Town</option>
+                                                                    <option value="opt2">Type 2</option>
+                                                                    <option value="opt3">Type 3</option>
+                                                                    <option value="opt4">Type 4</option>
+                                                                    <option value="opt5">Type 5</option>
+                                                                    <option value="opt6">Type 6</option>
+                                                                    <option value="opt7">Type 7</option>
+                                                                    <option value="opt8">Type 8</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <select name="select" class="form-control"  formControlName="applicationId">
+                                                                    <option value="opt1">Select Area</option>
+                                                                    <option value="opt2">Type 2</option>
+                                                                    <option value="opt3">Type 3</option>
+                                                                    <option value="opt4">Type 4</option>
+                                                                    <option value="opt5">Type 5</option>
+                                                                    <option value="opt6">Type 6</option>
+                                                                    <option value="opt7">Type 7</option>
+                                                                    <option value="opt8">Type 8</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row filter">
+                                                        <div class="col-sm-12 mobile-inputs">
+                                                            <button class="btn btn-primary">Apply Filter <span *ngIf='isloading' class='spinner-grow spinner-grow-sm'></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <table class="table" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Application ID</th>
+                                                            <th>First name</th>
+                                                            <th>Last name</th>
+                                                            <th>Approved Hospital</th>
+                                                            <th>Application Date</th>
+                                                            <th>Payment Status</th>
+                                                            <th>Approval Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody *ngIf="applications.length>0">
+                                                        <tr *ngFor="let item of applications | paginate: { itemsPerPage: count, currentPage: p, totalItems:item }; let i = index;">
+                                                            <th scope="row">{{i + 1}}</th>
+                                                            <td>{{item?.applicationId}}</td>
+                                                            <td>{{item?.deceasedFirstName + " " + item?.deceasedLastName}}</td>
+                                                            <td>{{item?.applicantFirstName + " " + item?.applicantLastName}}</td>
+                                                            <td>{{item?.hospital}}</td>
+                                                            <td>{{item?.timeCreated | date}}</td>
+                                                            <td scope="col" ><label [ngClass]="[item.approvalStatus =='APPROVED' ? 'badge badge-success' :'', item.approvalStatus =='QUERIED' ? 'badge badge-warning' :'', item.approvalStatus =='PENDING' ? 'badge badge-danger' :'']">{{item.approvalStatus}}</label></td>
+                                                            <td scope="col" ><label [ngClass]="[item.paymentStatus =='PENDING' ? 'badge badge-success' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-warning' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-danger' :'']">{{item.paymentStatus}}</label></td>
+                                                            <td scope="col" ><label class="badge-warning badge" style="cursor: pointer;" (click)="details(item)">Details</label></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="text-center" style="margin-top: 30px; opacity: 0.4;" *ngIf="applications.length == 0">
+                                                <h5>NO DATA</h5>
+                                            </div>
+                                            <div  class="text-center" *ngIf="applications.length<=0 && isloading">
+                                                <span class='spinner-grow spinner-grow-xl'></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="text-right justify-content-between d-flex">
+                                    <div style="font-size: 12px;">
+                                        <!-- <p>Items: <span>{{item}}</span></p> -->
+                                    </div>                        
+                                    <div class="group-pagination">
+                                        <pagination-controls (pageChange)="getNextPage($event)"></pagination-controls>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                
+            </div>
+        </div>
+    </div>

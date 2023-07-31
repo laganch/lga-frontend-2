@@ -51,6 +51,7 @@ export class StepThreeComponent {
     const url = "/state"
     this.apiService.get(url).subscribe(res=>{
       this.state = res.data;
+      console.log(res)
     })
   }
 }

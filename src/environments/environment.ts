@@ -5,7 +5,7 @@
 // const newLocal = 'http://localhost:8787/api';
 export const environment = {
     production: false,
-    // serverUrl: 'http://41.207.248.189:2000/api',
+    // serverUrl: 'http://41.207.248.186:8080/api',
     serverUrl: 'http://localhost:9090/api',
     // crpEndPointServerUrl: 'http://41.207.248.189:2000/api',
     fileUploadMaxSize: 1048576,

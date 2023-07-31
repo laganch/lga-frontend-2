@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --configuration production"
+    "heroku-postbuild": "ng build --configuration production",
+    "clean:api-sdk": "rimraf *.tgz ./sdk/ivas-api-sdk",
+    "generate-sdk:local": "npm run clean:api-sdk && openapi-generator-cli generate -g typescript-angular -i http://localhost:9090/v3/api-docs -o ./sdk/lga-api-sdk --additional-properties npmName=lga-api-sdk,snapshot=true,ngVersion=9.0.1,fileNaming=kebab-case,npmVersion=1.0.0,useSingleRequestParameter=true --type-mappings=DateTime=string",
+    "generate-sdk:staging": "npm run clean:api-sdk && openapi-generator-cli generate -g typescript-angular -i http://41.207.248.189:5010/v3/api-docs -o ./sdk/lga-api-sdk --additional-properties npmName=lga-api-sdk,snapshot=true,ngVersion=9.0.1,fileNaming=kebab-case,npmVersion=1.0.0,useSingleRequestParameter=true --type-mappings=DateTime=string",
+    "generate-sdk:prod": "npm run clean:api-sdk && openapi-generator-cli generate -g typescript-angular -i https://ivasapp.services.an.gov.ng/ivasapp/v3/api-docs -o ./sdk/lga-api-sdk --additional-properties npmName=lga-api-sdk,snapshot=true,ngVersion=9.0.1,fileNaming=kebab-case,npmVersion=1.0.0,useSingleRequestParameter=true --type-mappings=DateTime=string"
   },
   "private": true,
   "dependencies": {
@@ -24,8 +28,13 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@ngx-loading-bar/core": "^6.0.2",
+    "@openapitools/openapi-generator-cli": "^2.6.0",
+    "angular-paystack": "^1.0.0",
+    "angular4-paystack": "^3.1.2",
     "bootstrap": "^5.2.3",
     "express": "^4.18.2",
+    "jw-paginate": "^1.0.4",
+    "ngx-pagination": "^6.0.3",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -19,7 +19,6 @@ export class SideNavComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.profile?.role)
   }
 
 }

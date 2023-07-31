@@ -1,0 +1,113 @@
+<!-- Page Loader -->
+
+<div class="page-loader-wrapper">
+    <div class="loader">
+    </div>
+</div>
+
+<div id="main_content">
+    <!-- Start Main top header -->
+    <div id="header_top" class="header_top">
+        <div class="container">
+            <div class="hleft">
+                <a class="header-brand" href="/admin/dashboard"><i class="fa fa-home brand-logo"></i></a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
+                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
+                </div>
+            </div>
+            <div class="hright">
+                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- Start Main leftbar navigation -->
+    <div id="left-sidebar" class="sidebar">
+        <h5 class="brand-name">Ikwo LGA<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
+        </ul>
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
+                <nav class="sidebar-nav">
+                    <ul class="metismenu">
+                        <li class="active"><a href="#"><i class="fa fa-gear"></i><span>Settings</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Start project content area -->
+    <div class="page">
+        <!-- Start Page header -->
+        <div class="section-body" id="page_top" >
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="left">                        
+                       
+                    </div>
+                    <div class="right">
+                        <div class="notification d-flex">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Page title and tab -->
+        <div class="section-body">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div class="header-action">
+                        <h1 class="page-title">Setting</h1>
+                        <ol class="breadcrumb page-breadcrumb">
+                            <li class="breadcrumb-item"><a href="/admin/dashboard">Admin</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Setting</li>
+                        </ol>
+                    </div>
+                    <ul class="nav nav-tabs page-header-tab">
+                        <li class="nav-item"><a class="nav-link active show" data-toggle="tab" href="#Company_Settings">Company</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Localization">Media</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Roles_Permissions">Modules</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section-body mt-4">
+            <div class="container-fluid">
+                <div class="tab-content">
+                    <div class="tab-pane active show" id="Company_Settings">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Basic Settings</h3>
+                            </div>
+                            <app-application-setting></app-application-setting>
+                        </div>                        
+                    </div>
+                    <div class="tab-pane" id="Localization">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Media Settings</h3>
+                            </div>
+                            <app-media-setting></app-media-setting>
+                        </div>                    
+                    </div>
+                    <div class="tab-pane" id="Roles_Permissions">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Roles &amp; Permissions</h3>
+                            </div>
+                            <div class="card-body">
+                                <app-module-setting></app-module-setting>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start main footer -->
+
+    </div>    
+</div>

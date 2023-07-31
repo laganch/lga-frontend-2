@@ -1,0 +1,26 @@
+<ng-container [formGroup]="form">
+    <h4 class="sub-title">Groom Parents</h4>
+    <div class="col-sm-12 mobile-inputs">
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <label for="first_name">Full name</label>
+                <input type="text"
+                class="form-control form-txt-danger"
+                formControlName="GroomWitnessName">
+            </div>
+            <div class="col-sm-4">
+                <label for="first_name">Occupation</label>
+                <input type="text"
+                class="form-control form-txt-success"
+                formControlName="GroomWitnessOccupation">
+            </div>
+            <div class="col-sm-4">
+                <label for="first_name">Address</label>
+                <input type="text"
+                class="form-control form-txt-success"
+                placeholder="Name of hospital"
+                formControlName="GroomWitnessAddress">
+            </div>
+        </div>
+    </div>
+</ng-container>

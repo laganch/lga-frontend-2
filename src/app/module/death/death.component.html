@@ -127,7 +127,7 @@
 
                                                     <div class="row filter">
                                                         <div class="col-sm-12 mobile-inputs">
-                                                            <button class="btn btn-primary">Apply Filter</button>
+                                                            <button class="btn btn-primary">Apply Filter <span *ngIf='isloading' class='spinner-grow spinner-grow-sm'></span></button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,28 +136,50 @@
 
                                         <div class="card-block table-border-style">
                                             <div class="table-responsive">
-                                                <table class="table">
+                                                <table class="table" >
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>First Name</th>
-                                                            <th>Last Name</th>
-                                                            <th>Username</th>
+                                                            <th>Application ID</th>
+                                                            <th>Deased Fullname</th>
+                                                            <th>Applicant Fullname</th>
+                                                            <th>Approved Hospital</th>
+                                                            <th>Application Date</th>
+                                                            <th>Payment Status</th>
+                                                            <th>Approval Status</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
-                                                        <tr *ngFor="let item of applications; let i = index">
+                                                    <tbody *ngIf="applications.length>0">
+                                                        <tr *ngFor="let item of applications | paginate: { itemsPerPage: count, currentPage: p, totalItems:item }; let i = index;">
                                                             <th scope="row">{{i + 1}}</th>
-                                                            <td>Mark</td>
-                                                            <td>Otto</td>
-                                                            <td>@mdo</td>
+                                                            <td>{{item?.applicationId}}</td>
+                                                            <td>{{item?.deceasedFirstName + " " + item?.deceasedLastName}}</td>
+                                                            <td>{{item?.applicantFirstName + " " + item?.applicantLastName}}</td>
+                                                            <td>{{item?.hospital}}</td>
+                                                            <td>{{item?.timeCreated | date}}</td>
+                                                            <td scope="col" ><label [ngClass]="[item.approvalStatus =='APPROVED' ? 'badge badge-success' :'', item.approvalStatus =='QUERIED' ? 'badge badge-warning' :'', item.approvalStatus =='PENDING' ? 'badge badge-danger' :'']">{{item.approvalStatus}}</label></td>
+                                                            <td scope="col" ><label [ngClass]="[item.paymentStatus =='PENDING' ? 'badge badge-success' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-warning' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-danger' :'']">{{item.paymentStatus}}</label></td>
+                                                            <td scope="col" ><label class="badge-warning badge" style="cursor: pointer;" (click)="details(item)">Details</label></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            <div class="text-center" style="margin-top: 30px; opacity: 0.4;" *ngIf="applications.length == 0">
+                                                <h5>NO DATA</h5>
+                                            </div>
+                                            <div  class="text-center" *ngIf="applications.length<=0 && isloading">
+                                                <span class='spinner-grow spinner-grow-xl'></span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <!-- Basic Form Inputs card end -->
+                                <div class="text-right justify-content-between d-flex">
+                                    <div style="font-size: 12px;">
+                                        <!-- <p>Items: <span>{{item}}</span></p> -->
+                                    </div>                        
+                                    <div class="group-pagination">
+                                        <pagination-controls (pageChange)="getNextPage($event)"></pagination-controls>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/authentication/auth.service';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 import { CredentialsService } from 'src/app/core/authentication/credentials.service';
 import { LoginContext } from 'src/app/models/login-context.model';
+import { Constant } from 'src/services/Constant';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -22,7 +24,8 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private router: Router,
     private route: ActivatedRoute,
-    private credentialsService: CredentialsService
+    private credentialsService: CredentialsService,
+    private auth:AuthService
   ){
     this.loginForm = this.initializeUserForm();
   }
@@ -31,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   initializeUserForm(): FormGroup {
     return this.loginForm = new FormGroup({
-      userName: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
 
     });
@@ -54,40 +57,24 @@ export class LoginComponent implements OnInit {
         landing = '/user/dashboard';
     }
     this.credentialsService.updateCredentials(loginContext);
+    localStorage.setItem(Constant.LOGGED_IN_USER, loginContext.token);
+    localStorage.setItem(Constant.USER_DATA, JSON.stringify(loginContext))
     return landing;
 }
 
   handleLogin() {
     this.isLoading = true;
     const data = this.loginForm.value;
-    // const remember: boolean = this.loginFormControl.remember.value;
         this.authenticationService.login(data, true).subscribe(
             response => {
-                // this.loginForm.reset();
-                if (response.success === true || response.status === 'OK') {
-                  const url = this.route.snapshot.queryParams['redirect'] ||
-                  this.getLandingPage(response.data);
+                  const url = this.route.snapshot.queryParams['redirect'] || this.getLandingPage(response.data);
                   window.location.href = url;
                   this.getLandingPage(response.data);
-                } else {
-                    this.errorMessage = response.message;
-                    // this.toastService.showDanger(
-                    //     this.errorMessage || 'Invalid username and/or password!'
-                    // );
-                    this.isLoading = false;
-                    localStorage.setItem('loginStatus', 'FAILED');
-                    window.location.reload();
-                }
             },
             error => {
                 this.isLoading = false;
                 this.loginForm.reset();
                 this.errorMessage = 'Username or password incorrect!';
-                // this.toastService.showDanger(this.errorMessage);
-                const element: HTMLElement = document.getElementById(
-                    'cmdSubmit'
-                ) as HTMLElement;
-                element.click();
                 this.isLoading = false;
             }
         );

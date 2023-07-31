@@ -1,0 +1,15 @@
+export * from './application-ctrl.service';
+import { ApplicationCtrlService } from './application-ctrl.service';
+export * from './menu-controller.service';
+import { MenuControllerService } from './menu-controller.service';
+export * from './print-ctrl.service';
+import { PrintCtrlService } from './print-ctrl.service';
+export * from './setting-ctrl.service';
+import { SettingCtrlService } from './setting-ctrl.service';
+export * from './test-ctrl.service';
+import { TestCtrlService } from './test-ctrl.service';
+export * from './user-controller.service';
+import { UserControllerService } from './user-controller.service';
+export * from './utility-ctrl.service';
+import { UtilityCtrlService } from './utility-ctrl.service';
+export const APIS = [ApplicationCtrlService, MenuControllerService, PrintCtrlService, SettingCtrlService, TestCtrlService, UserControllerService, UtilityCtrlService];

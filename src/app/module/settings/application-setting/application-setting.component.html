@@ -1,0 +1,58 @@
+<div class="card-body">
+    <form [formGroup]='ApplicationForm' (ngSubmit)='Save()'>
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                    <label>Application Name <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" value="" formControlName="appName">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                    <label>Application Slogan</label>
+                    <input class="form-control" value="Louis Pierce" type="text" formControlName="lgaSlogan">
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="form-group">
+                    <label>Contact Number <span class="text-danger">*</span></label>
+                    <input class="form-control" value="+1 882-635-7531" type="text" formControlName="contact">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" 
+                    placeholder="44 Shirley Ave. West Chicago, IL 60185" aria-label="With textarea" formControlName="description"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>Contact Email <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-envelope"></i></span>
+                        </div>
+                        <input type="text" class="form-control" value="LouisPierce@example.com" formControlName="email">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label>Website Url</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-globe"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="http://" formControlName="website">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-right m-t-20">
+                <button class="btn btn-primary">SAVE</button>
+            </div>
+        </div>
+    </form>
+</div>

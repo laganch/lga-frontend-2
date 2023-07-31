@@ -5,7 +5,7 @@
 export const environment = {
     
     production: true,
-    serverUrl: '/localapp',
+    serverUrl: 'http://41.207.248.186:8080/api',
     // serverUrl: 'https://taxapp.services.an.gov.ng/taxappapi',    
 
 
