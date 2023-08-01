@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { ApiService } from 'src/services/api.service';
 import { UploadFileService } from 'src/services/upload-file.service';
@@ -26,6 +27,7 @@ export class MarriageApplicationComponent {
     private _fb:FormBuilder,
     private apiService: ApiService,
     private uploadService: UploadFileService,
+    private router:Router
     ){
     this.ApplicationForm = this.initializeApplicationFormForm();
   }
@@ -75,7 +77,9 @@ export class MarriageApplicationComponent {
     data["groomSignature"]= this.groomSignature;
     const url = "/save/marriage/application";
     this.apiService.post_(url, data).subscribe(res=>{
-      console.log(res)
+      this.router.navigate(["/admin/dashboard"]).then(() =>{
+        location.reload();
+      })
     })
   }
 

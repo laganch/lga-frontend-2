@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class DeathApplicationComponent implements OnInit {
   constructor(
     private _fb:FormBuilder,
     private apiService: ApiService,
+    private router:Router
     ){
     this.ApplicationForm = this.initializeApplicationFormForm();
   }
@@ -54,7 +56,9 @@ export class DeathApplicationComponent implements OnInit {
     const url = "/save/death/application";
     let data = this.ApplicationForm.value;
     this.apiService.post_(url, data).subscribe(res=>{
-      console.log(res)
+      this.router.navigate(["/admin/dashboard"]).then(() =>{
+        location.reload();
+      })
     })
   }
 
