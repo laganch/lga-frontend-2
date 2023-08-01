@@ -68,7 +68,7 @@ export class RegistrationComponent {
     data["area"]=this.mainForm.value.stateDetails.area;
     data["email"]=this.mainForm.value.loginDetails.userName;
     data["password"]=this.mainForm.value.loginDetails.password;
-    data["role"]="GENERAL_USER";
+    data["role"]="ADMIN";
     this.apiService.post(url, data).subscribe(res=>{
       console.log(res)
     })
