@@ -3,6 +3,7 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
 import { CredentialsService } from 'src/app/core/authentication/credentials.service';
 import { LoginContext } from 'src/app/models/login-context.model';
 import { ApiService } from 'src/services/api.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-side-nav',
@@ -19,6 +20,12 @@ export class SideNavComponent {
   }
 
   ngOnInit(): void {
+  }
+
+  upAlert(){
+    alertify.set('notifier','position', 'top-left');
+    alertify.warning('Coming Soon !!!');
+
   }
 
 }

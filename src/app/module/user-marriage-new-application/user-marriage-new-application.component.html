@@ -1,0 +1,208 @@
+   <!-- Pre-loader start -->
+   <div class="theme-loader">
+    <div class="loader-track">
+        <div class="loader-bar"></div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <app-main-top-menu></app-main-top-menu>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <app-side-nav></app-side-nav>
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <!-- Page-header start -->
+                                <div class="page-wrapper card">
+                                    <div class="card-block">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="m-b-10">New Application</h5>
+                                        </div>
+                                        
+                                        <ul class="breadcrumb-title b-t-default p-t-10">
+                                            <li class="breadcrumb-item">
+                                                <a href="/"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="/user/dashboard">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="/user/marriage-certificate">Marriage-Certificate</a></li>
+                                            <li class="breadcrumb-item"><a href="/user/marriage/application">Application</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                <!-- Basic Form Inputs card start -->
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-header-right"><i
+                                            class="icofont icofont-spinner-alt-5"></i></div>
+
+                                            <div class="card-header-right">
+                                                <i class="icofont icofont-spinner-alt-5"></i>
+                                            </div>
+
+                                        </div>
+                                        <form [formGroup]='ApplicationForm' (ngSubmit)='Save()'>
+                                            <div class="card-block">
+                                                <h4 class="sub-title" style="text-align: center;">MARRIAGE APPLICATION</h4>
+                                                <div class="row ">
+                                                    <div class="col-sm-12 alert-danger" style="text-align: center;">
+                                                        Please fill the form below to apply for your marriage certificate, 
+                                                        <br>
+                                                        the certificate will be available for download after payment has been done and the required approvals done.
+                                                    </div>
+                                                    <br>
+                                                    <h4 class="sub-title" style="text-align: center;"></h4> 
+
+                                                    <div class="col-sm-12 mobile-inputs">
+
+                                                    <h4 class="sub-title alert-danger" style="">Spouse Details</h4> 
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse First Name</label>
+                                                                <input type="text"
+                                                                class="form-control form-txt-danger"
+                                                                placeholder="Groom First Name"
+                                                                formControlName="brideFirstName">
+                                                                <!-- <div class="col-form-label">Success! You've done it.</div> -->
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label for="first_name">Spouse Last Name</label>
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Spouse Last Name"
+                                                                formControlName="brideLastName">
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <label for="first_name">Spouse Other Names</label>
+                                                                <input type="text"
+                                                                class="form-control form-txt-success"
+                                                                placeholder="Spouse Other Names"
+                                                                formControlName="brideMiddleName">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 mobile-inputs">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse occupation</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Spouse Occupation" formControlName="brideOccupation">
+                                                            </div>
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse Gender</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Groom First Name" formControlName="brideGender">
+                                                            </div> 
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse Address</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Spouse Address" formControlName="brideAddress">
+                                                            </div>  
+                                                        </div>
+                                                        <h4 class="sub-title alert-danger" style="">Parents Details</h4> 
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Your Parents Name</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Your Parent Name" formControlName="groomParentName">
+                                                            </div>
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Your Parents Address</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Your Parent Address" formControlName="groomParentAddress">
+                                                            </div> 
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Your Sponsor Name</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Name of Sponsor" formControlName="groomWitnessName">
+                                                            </div>  
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse Parents Name</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Spouse Parents Name" formControlName="brideParentName">
+                                                            </div>
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse Parent Adddress</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Spouse Parents Address" formControlName="brideParentAddress">
+                                                            </div> 
+                                                        </div>
+                                                        <h4 class="sub-title alert-danger" style="">Wedding Details</h4> 
+
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Church</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Name of Church" formControlName="church">
+                                                            </div>
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Church Location/Address</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="CHurch Address" formControlName="churchAddress">
+                                                            </div> 
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Name of Presiding Priest</label>
+                                                                <input type="text" class="form-control form-txt-danger"
+                                                                placeholder="Name of presiding Priest" formControlName="priest">
+                                                            </div> 
+                                                        </div>
+                                                        <div class="form-group row"> 
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Marriage Date</label>
+                                                                <input type="date" class="form-control form-txt-danger" formControlName="marriageDate">
+                                                            </div>   
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Wedding Date</label>
+                                                                <input type="date" class="form-control form-txt-danger" formControlName="weddingDate">
+                                                            </div>  
+                                                        </div>
+
+
+                                                        <h4 class="sub-title alert-danger" style="">Media Center</h4> 
+
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Your Signature</label>
+                                                                <input type="file" class="form-control form-txt-danger" formControlName="groomSignature">
+                                                            </div>
+                                                            <div class="col-sm-4 has-danger">
+                                                                <label for="first_name">Spouse Signature</label>
+                                                                <input type="file" class="form-control form-txt-danger" formControlName="brideSignature">
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-sm-12 ">
+                                                        <div class="submit ">
+                                                            <button class="btn btn-success btn-lg pull-right"  type="submit">Submit &nbsp; <i class="fa fc-text-back" ></i></button>
+                                                      </div>
+                                                                
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Basic Form Inputs card end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                
+            </div>
+        </div>
+    </div>

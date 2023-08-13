@@ -26,31 +26,9 @@ export interface MarriageDto {
     brideAddress?: string;
     bridebusstop?: string;
     brideLandmark?: string;
-    groomDOB?: string;
-    brideDOB?: string;
     marriageDate?: string;
     groomPhonenumber?: string;
     bridePhonenumber?: string;
-    brideFatherFirstName?: string;
-    brideFatherLastName?: string;
-    brideFatherMiddleName?: string;
-    brideFatherOccupation?: string;
-    brideFatherAddress?: string;
-    brideWitnessFirstName?: string;
-    brideWitnessLastName?: string;
-    brideWitnessMiddleName?: string;
-    brideWitnessOccupation?: string;
-    brideWitnessAddress?: string;
-    groomFatherFirstName?: string;
-    groomFatherLastName?: string;
-    groomFatherMiddleName?: string;
-    groomFatherOccupation?: string;
-    groomFatherAddress?: string;
-    groomWitnessFirstName?: string;
-    groomWitnessLastName?: string;
-    groomWitnessMiddleName?: string;
-    groomWitnessOccupation?: string;
-    groomWitnessAddress?: string;
     groomSignature?: string;
     brideSignature?: string;
     brideWitnessSignature?: string;
@@ -59,6 +37,16 @@ export interface MarriageDto {
     paymentStatus?: MarriageDto.PaymentStatusEnum;
     applicationId?: string;
     timeCreated?: string;
+    church?: string;
+    weddingDate?: string;
+    brideGender?: string;
+    brideName?: string;
+    brideParentAddress?: string;
+    groomWitnessName?: string;
+    groomParentAddress?: string;
+    groomParentName?: string;
+    churchAddress?: string;
+    priest?: string;
 }
 export namespace MarriageDto {
     export type ApprovalStatusEnum = 'APPROVED' | 'REJECTED' | 'PENDING' | 'QUERIED';

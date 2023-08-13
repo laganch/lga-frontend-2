@@ -30,6 +30,10 @@ export interface PrintCardRequestParams {
     printDto: Array<PrintDto>;
 }
 
+export interface PrintMarriageRequestParams {
+    printDto: Array<PrintDto>;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -134,7 +138,59 @@ export class PrintCtrlService {
             localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
         }
 
-        let localVarPath = `/api/print/card/print`;
+        let localVarPath = `/api/print/certificate`;
+        return this.httpClient.request('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                body: printDto,
+                responseType: "blob",
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * @param requestParameters
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public printMarriage(requestParameters: PrintMarriageRequestParams, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*',}): Observable<Blob>;
+    public printMarriage(requestParameters: PrintMarriageRequestParams, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*',}): Observable<HttpResponse<Blob>>;
+    public printMarriage(requestParameters: PrintMarriageRequestParams, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: '*/*',}): Observable<HttpEvent<Blob>>;
+    public printMarriage(requestParameters: PrintMarriageRequestParams, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: '*/*',}): Observable<any> {
+        const printDto = requestParameters.printDto;
+        if (printDto === null || printDto === undefined) {
+            throw new Error('Required parameter printDto was null or undefined when calling printMarriage.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                '*/*'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let localVarPath = `/api/print/marriage/certificate`;
         return this.httpClient.request('post', `${this.configuration.basePath}${localVarPath}`,
             {
                 body: printDto,

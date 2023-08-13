@@ -1,0 +1,121 @@
+   <!-- Pre-loader start -->
+   <div class="theme-loader">
+    <div class="loader-track">
+        <div class="loader-bar"></div>
+    </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+
+        <app-main-top-menu></app-main-top-menu>
+
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <app-side-nav></app-side-nav>
+
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <!-- Main-body start -->
+                        <div class="main-body">
+                            <div class="page-wrapper">
+
+                                <!-- Page-header start -->
+                                <div class="page-wrapper card">
+                                    <div class="card-block">
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="m-b-10">My Death Certificate Application</h5>
+                                            <a class="m-b-10 btn btn-success" href="/user/death/application">New Application</a>
+                                        </div>
+                                        
+                                        <ul class="breadcrumb-title b-t-default p-t-10">
+                                            <li class="breadcrumb-item">
+                                                <a href="/"> <i class="fa fa-home"></i> </a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="/user/dashboard">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="/user/death-certificate">Death-Certificate</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <form>
+                                        <div class="card-block">
+                                            <h4 class="sub-title">Search Filter</h4>
+
+                                            <div class="row">
+                                                <div class="col-sm-12 mobile-inputs">
+
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-3">
+                                                            <input type="text"
+                                                            class="form-control form-txt-danger"
+                                                            placeholder="Application Id" formControlName="aid">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <input type="text"
+                                                            class="form-control form-txt-success"
+                                                            placeholder="Phone Number" formControlName="pn">
+                                                        </div>
+
+                                                        <div class="col-sm-3">
+                                                            <input type="text"
+                                                            class="form-control form-txt-success"
+                                                            placeholder="Name" formControlName="pn">
+                                                        </div>
+                                                       
+                                                        <div class="col-sm-3">
+                                                            <input type="submit" value="Apply Filter" class="form-control form-txt-success btn-success" placeholder="Address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div class="card-block table-border-style">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Application ID</th>
+                                                        <th>Applicants Fullname</th>
+                                                        <th>Applicants LastName</th>
+                                                        <th>Application Date</th>
+                                                        <th>Approval Status</th>
+                                                        <th>Payment Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody >
+                                                    <!-- <tr *ngFor="let item of applications | paginate: { itemsPerPage: count, currentPage: p, totalItems:item }; let i = index;">
+                                                        <th scope="row">{{i + 1}}</th>
+                                                        <td>{{item?.applicationId}}</td>
+                                                        <td>{{item?.brideName}}</td>
+                                                        <td>{{item?.priest}}</td>
+                                                        <td>{{item?.timeCreated | date}}</td>
+                                                        <td scope="col" ><label [ngClass]="[item.approvalStatus =='APPROVED' ? 'badge badge-success' :'', item.approvalStatus =='QUERIED' ? 'badge badge-warning' :'', item.approvalStatus =='PENDING' ? 'badge badge-danger' :'']">{{item.approvalStatus}}</label></td>
+                                                        <td scope="col" ><label [ngClass]="[item.paymentStatus =='PAID' ? 'badge badge-success' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-warning' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-danger' :'']">{{item.paymentStatus}}</label></td>
+                                                        <td scope="col"   *ngIf="item.paymentStatus != 'PAID'"><label class="badge-warning badge" style="cursor: pointer;" (click)="details(item)">proceed to payment</label></td>
+                                                        <td scope="col" *ngIf="item.paymentStatus == 'PAID' && item.approvalStatus == 'PENDING'"><label class="badge-warning badge" style="cursor: pointer;" >Awaiting Approval</label></td>
+                                                        <td scope="col"  (click)="printSingle(item?.applicationId, 'MARRIAGE')" *ngIf="item.paymentStatus == 'PAID'&& item.approvalStatus=='APPROVED'"><label class="badge-warning badge" style="cursor: pointer;">Download Certificate</label></td>
+                                                    </tr> -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- <div class="text-center" style="margin-top: 30px; opacity: 0.4;" *ngIf="applications.length == 0">
+                                            <h5>NO DATA</h5>
+                                        </div>
+                                        <div  class="text-center" *ngIf="applications.length<=0 && isLoading">
+                                            <span class='spinner-grow spinner-grow-xl'></span>
+                                        </div> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                                
+            </div>
+        </div>
+    </div>

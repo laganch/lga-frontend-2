@@ -1,4 +1,4 @@
-## lga-api-sdk@1.0.0-SNAPSHOT.202307261005
+## lga-api-sdk@1.0.0-SNAPSHOT.202308131923
 
 ### Building
 
@@ -19,7 +19,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install lga-api-sdk@1.0.0-SNAPSHOT.202307261005 --save
+npm install lga-api-sdk@1.0.0-SNAPSHOT.202308131923 --save
 ```
 
 _without publishing (not recommended):_

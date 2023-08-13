@@ -1,4 +1,4 @@
-<nav class="pcoded-navbar" *ngIf="profile?.role =='GENERAL_USER'">
+<nav class="pcoded-navbar" *ngIf="profile?.role =='USER'">
     <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
     <div class="pcoded-inner-navbar main-menu">
         
@@ -36,47 +36,112 @@
                 </a>
             </li>
             <li>
-                <a href="bs-basic-table.html">
+                <a (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">LGA ID Application</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li>
-                <a href="bs-basic-table.html">
+                <a  (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Affidevit</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li>
-                <a href="bs-basic-table.html">
+                <a  (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Registration</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li>
-                <a href="bs-basic-table.html">
+                <a  (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Organogram</span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Certificate of Occupancy</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Land Allocation Certificate</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main"> Health Clearance Certificate</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Fire Safety Permit</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Waste Management Permit</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Street Naming and Numbering Application</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Noise Pollution Permit</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main">Hawkers Permit</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
+            <li>
+                <a  (click)="upAlert()" style="cursor: pointer;">
+                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                    <span class="pcoded-mtext" data-i18n="nav.form-components.main"> Tax Clearance Certificate</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+            </li>
+
 
         </ul>
 
         <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Others</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="chart.html">
+                <a  (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">News</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li>
-                <a href="map-google.html">
+                <a  (click)="upAlert()" style="cursor: pointer;">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Support</span>
                     <span class="pcoded-mcaret"></span>
@@ -90,14 +155,14 @@
                 </a>
                 <ul class="pcoded-submenu">
                     <li class=" ">
-                        <a href="auth-normal-sign-in.html">
+                        <a  (click)="upAlert()" style="cursor: pointer;">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Road Map</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
-                        <a href="auth-sign-up.html">
+                        <a  (click)="upAlert()" style="cursor: pointer;">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                             <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Calender</span>
                             <span class="pcoded-mcaret"></span>

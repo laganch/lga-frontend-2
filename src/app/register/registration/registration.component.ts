@@ -5,6 +5,7 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
 import { CredentialsService } from 'src/app/core/authentication/credentials.service';
 import { LoginContext } from 'src/app/models/login-context.model';
 import { ApiService } from 'src/services/api.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-registration',
@@ -68,9 +69,15 @@ export class RegistrationComponent {
     data["area"]=this.mainForm.value.stateDetails.area;
     data["email"]=this.mainForm.value.loginDetails.userName;
     data["password"]=this.mainForm.value.loginDetails.password;
-    data["role"]="ADMIN";
+    data["role"]="USER";
     this.apiService.post(url, data).subscribe(res=>{
-      console.log(res)
+
+      alertify.set('notifier','position', 'top-right');
+      alertify.error('Username or Password Incorrect');
+      
+      this.router.navigate(["/login"]).then(() =>{
+        location.reload();
+      })
     })
   }
 

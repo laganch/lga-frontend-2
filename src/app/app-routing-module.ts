@@ -15,6 +15,16 @@ import { ProfileComponent } from "./module/profile/profile.component";
 import { SettingsComponent } from "./module/settings/settings.component";
 import { RegistrationComponent } from "./register/registration/registration.component";
 import { AffidevitComponent } from "./module/affidevit/affidevit.component";
+import { UserBirthApplicationComponent } from "./module/user-birth-application/user-birth-application.component";
+import { UserDeathApplicationComponent } from "./module/user-death-application/user-death-application.component";
+import { UserMarriageApplicationComponent } from "./module/user-marriage-application/user-marriage-application.component";
+import { UserOthersApplicationComponent } from "./module/user-others-application/user-others-application.component";
+import { UserMarriageNewApplicationComponent } from "./module/user-marriage-new-application/user-marriage-new-application.component";
+import { UserDeathNewApplicationComponent } from "./module/user-death-new-application/user-death-new-application.component";
+import { UserBirthNewApplicationComponent } from "./module/user-birth-new-application/user-birth-new-application.component";
+import { UserMarriageApplicationPreviewComponent } from "./module/user-marriage-application-preview/user-marriage-application-preview.component";
+import { UserBirthApplicationPreviewComponent } from "./module/user-birth-application-preview/user-birth-application-preview.component";
+import { UserDeathApplicationPreviewComponent } from "./module/user-death-application-preview/user-death-application-preview.component";
 
 const routes:Routes = [
     {path:"", component:HomeComponent},
@@ -31,6 +41,19 @@ const routes:Routes = [
     {path:"admin/marriage/application", component:MarriageApplicationComponent, canActivate:[AuthenticationGuard]},
     {path:"admin/settings", component:SettingsComponent, canActivate:[AuthenticationGuard]},
     {path:"admin/affidevit", component:AffidevitComponent, canActivate:[AuthenticationGuard]},
+    {path:"user/birth-certificate", component:UserBirthApplicationComponent},
+    {path:"user/death-certificate", component:UserDeathApplicationComponent},
+    {path:"user/marriage-certificate", component:UserMarriageApplicationComponent},
+    {path:"user/marriage/application", component:UserMarriageNewApplicationComponent},
+    {path:"user/death/application", component:UserDeathNewApplicationComponent},
+    {path:"user/birth/application", component:UserBirthNewApplicationComponent},
+    {path:"user/other-application", component:UserOthersApplicationComponent},
+    {path:"user/marriage/application/preview", component:UserMarriageApplicationPreviewComponent},
+    {path:"user/birth/application/preview", component:UserBirthApplicationPreviewComponent},
+    {path:"user/death/application/preview", component:UserDeathApplicationPreviewComponent},
+    {path:"admin/marriage/application/preview", component:UserMarriageApplicationPreviewComponent},
+    
+    
 ]
 
 @NgModule({

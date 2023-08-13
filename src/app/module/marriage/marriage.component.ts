@@ -147,7 +147,7 @@ export class MarriageComponent implements OnInit{
 
   details(item:any){
     localStorage.setItem('items', JSON.stringify(item));
-    this.router.navigate(['/admin/death-preview'], { replaceUrl: true }).then(() =>{
+    this.router.navigate(['/admin/marriage/application/preview'], { replaceUrl: true }).then(() =>{
       location.reload();
     })
   }

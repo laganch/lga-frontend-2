@@ -14,6 +14,7 @@
 export interface PrintDto { 
     id?: number;
     type?: PrintDto.TypeEnum;
+    applicationId?: string;
 }
 export namespace PrintDto {
     export type TypeEnum = 'BIRTH' | 'DEATH' | 'MARRIAGE';

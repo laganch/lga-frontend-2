@@ -149,7 +149,7 @@
                                                             <td>{{item?.applicationId}}</td>
                                                             <td>{{item?.groomFirstName + " " + item?.groomLastName}}</td>
                                                             <td>{{item?.brideFirstName + " " + item?.brideLastName}}</td>
-                                                            <td>{{item?.groomFatherFirstName +" " + item?.groomFatherLastName}}</td>
+                                                            <td>{{item?.priest}}</td>
                                                             <td>{{item?.timeCreated | date}}</td>
                                                             <td scope="col" ><label [ngClass]="[item.approvalStatus =='APPROVED' ? 'badge badge-success' :'', item.approvalStatus =='QUERIED' ? 'badge badge-warning' :'', item.approvalStatus =='PENDING' ? 'badge badge-danger' :'']">{{item.approvalStatus}}</label></td>
                                                             <td scope="col" ><label [ngClass]="[item.paymentStatus =='PENDING' ? 'badge badge-success' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-warning' :'', item.paymentStatus =='NOT_PAID' ? 'badge badge-danger' :'']">{{item.paymentStatus}}</label></td>

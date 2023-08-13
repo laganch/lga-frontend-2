@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login/login.component';
 import { HomeComponent } from './main/home/home.component';
 import { RegistrationComponent } from './register/registration/registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './module/dashboard/dashboard.component';
 import { TokenInterceptor } from 'src/services/tokenInterceptor.services';
 import { StepOneComponent } from './register/step-one/step-one.component';
 import { StepTwoComponent } from './register/step-two/step-two.component';
@@ -45,6 +44,18 @@ import { BirthPreviewComponent } from './module/birth-preview/birth-preview.comp
 import { AffidevitComponent } from './module/affidevit/affidevit.component';
 import { PaystackComponent } from './main/paystack/paystack.component';
 import { Angular4PaystackModule } from 'angular4-paystack';
+import { DashboardComponent } from './module/dashboard/dashboard.component';
+import { UserBirthApplicationComponent } from './module/user-birth-application/user-birth-application.component';
+import { UserDeathApplicationComponent } from './module/user-death-application/user-death-application.component';
+import { UserMarriageApplicationComponent } from './module/user-marriage-application/user-marriage-application.component';
+import { UserAffidevitApplicationComponent } from './module/user-affidevit-application/user-affidevit-application.component';
+import { UserOthersApplicationComponent } from './module/user-others-application/user-others-application.component';
+import { UserMarriageNewApplicationComponent } from './module/user-marriage-new-application/user-marriage-new-application.component';
+import { UserDeathNewApplicationComponent } from './module/user-death-new-application/user-death-new-application.component';
+import { UserBirthNewApplicationComponent } from './module/user-birth-new-application/user-birth-new-application.component';
+import { UserBirthApplicationPreviewComponent } from './module/user-birth-application-preview/user-birth-application-preview.component';
+import { UserMarriageApplicationPreviewComponent } from './module/user-marriage-application-preview/user-marriage-application-preview.component';
+import { UserDeathApplicationPreviewComponent } from './module/user-death-application-preview/user-death-application-preview.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +63,6 @@ import { Angular4PaystackModule } from 'angular4-paystack';
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    DashboardComponent,
     StepOneComponent,
     StepTwoComponent,
     StepThreeComponent,
@@ -84,7 +94,19 @@ import { Angular4PaystackModule } from 'angular4-paystack';
     BirthApplicationComponent,
     BirthPreviewComponent,
     AffidevitComponent,
-    PaystackComponent
+    PaystackComponent,
+    DashboardComponent,
+    UserBirthApplicationComponent,
+    UserDeathApplicationComponent,
+    UserMarriageApplicationComponent,
+    UserAffidevitApplicationComponent,
+    UserOthersApplicationComponent,
+    UserMarriageNewApplicationComponent,
+    UserDeathNewApplicationComponent,
+    UserBirthNewApplicationComponent,
+    UserBirthApplicationPreviewComponent,
+    UserMarriageApplicationPreviewComponent,
+    UserDeathApplicationPreviewComponent
   ],
   imports: [
     BrowserModule,
