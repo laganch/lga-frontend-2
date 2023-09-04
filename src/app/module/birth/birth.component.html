@@ -28,7 +28,7 @@
                                             <h5 class="m-b-10">Birth Certificate Application</h5>
                                             <a href="/admin/birth/application" class="m-b-10">New Application</a>
                                         </div>
-                                        
+
                                         <ul class="breadcrumb-title b-t-default p-t-10">
                                             <li class="breadcrumb-item">
                                                 <a href="/"> <i class="fa fa-home"></i> </a>
@@ -153,8 +153,8 @@
                                                         <tr *ngFor="let item of applications | paginate: { itemsPerPage: count, currentPage: p, totalItems:item }; let i = index;">
                                                             <th scope="row">{{i + 1}}</th>
                                                             <td>{{item?.applicationId}}</td>
-                                                            <td>{{item?.deceasedFirstName + " " + item?.deceasedLastName}}</td>
-                                                            <td>{{item?.applicantFirstName + " " + item?.applicantLastName}}</td>
+                                                            <td>{{item?.father }}</td>
+                                                            <td>{{item?.mother}}</td>
                                                             <td>{{item?.hospital}}</td>
                                                             <td>{{item?.timeCreated | date}}</td>
                                                             <td scope="col" ><label [ngClass]="[item.approvalStatus =='APPROVED' ? 'badge badge-success' :'', item.approvalStatus =='QUERIED' ? 'badge badge-warning' :'', item.approvalStatus =='PENDING' ? 'badge badge-danger' :'']">{{item.approvalStatus}}</label></td>
@@ -175,7 +175,7 @@
                                 <div class="text-right justify-content-between d-flex">
                                     <div style="font-size: 12px;">
                                         <!-- <p>Items: <span>{{item}}</span></p> -->
-                                    </div>                        
+                                    </div>
                                     <div class="group-pagination">
                                         <pagination-controls (pageChange)="getNextPage($event)"></pagination-controls>
                                     </div>
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                                                
+
             </div>
         </div>
     </div>

@@ -1,1 +1,125 @@
-<p>user-death-application-preview works!</p>
+<!-- Pre-loader start -->
+<div class="theme-loader">
+  <div class="loader-track">
+    <div class="loader-bar"></div>
+  </div>
+</div>
+<!-- Pre-loader end -->
+<div id="pcoded" class="pcoded">
+  <div class="pcoded-overlay-box"></div>
+  <div class="pcoded-container navbar-wrapper">
+
+    <app-main-top-menu></app-main-top-menu>
+
+    <div class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+        <app-side-nav></app-side-nav>
+
+        <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+            <!-- Main-body start -->
+            <div class="main-body">
+              <div class="page-wrapper">
+
+                <!-- Page-header start -->
+                <div class="page-header card">
+                  <div class="card-block">
+                    <h5 class="m-b-10">Death Certificate Preview </h5>
+                  </div>
+                </div>
+
+                <div class="row  page-header card">
+                  <div class="col-4"></div>
+                  <div class="table-responsive">
+                    <table class="table table-sm">
+                      <thead>
+                      <tr>
+                        <th>Application ID:</th>
+                        <th>{{applications?.applicationId}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants First Name:</th>
+                        <th>{{applications?.applicantFirstName}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants Last name:</th>
+                        <th>{{applications?.applicantLastName}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants Occupation:</th>
+                        <th>{{applications?.applicantOccupation}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants Address:</th>
+                        <th>{{applications?.deceasedAddress}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants Contact:</th>
+                        <th>{{applications?.applicantPhonenumber}}</th>
+                      </tr>
+                      <tr>
+                        <th>Applicants Relationship with the Deceased:</th>
+                        <th>{{applications?.relationship}}</th>
+                      </tr>
+                      <tr>
+                        <th>Deceased First Name:</th>
+                        <th>{{applications?.deceasedFirstName}}</th>
+                      </tr>
+                      <tr>
+                        <th>Deceased Last name:</th>
+                        <th>{{applications?.deceasedLastName}}</th>
+                      </tr>
+                      <tr>
+                        <th>Deceased Occupation:</th>
+                        <th>{{applications?.deceasedOccupation}}</th>
+                      </tr>
+                      <tr>
+                        <th>Approving Hospital:</th>
+                        <th>{{applications?.hospital}}</th>
+                      </tr>
+                      <tr>
+                        <th>Date Passed:</th>
+                        <th>{{applications?.lastUpdatedAt | date}}</th>
+                      </tr>
+                      <tr>
+                        <th>Place of death:</th>
+                        <th>{{applications?.hospital}}</th>
+                      </tr>
+                      <tr>
+                        <th>Date of Application:</th>
+                        <th>{{applications?.createdAt | date}}</th>
+                      </tr>
+
+                      </thead>
+                    </table>
+
+                    <div class="d-flex justify-content-end"  *ngIf="applications?.approvalStatus =='APPROVED' && applications?.paymentStatus=='PAID'">
+                      <button type="button" class="btn btn-success" (click)="printSingle(applications?.id, 'BIRTH')">
+                        Dowload Certificate
+                      </button>
+                    </div>
+
+                    <div class="d-flex justify-content-end"  *ngIf="applications?.paymentStatus=='NOT_PAID' ">
+                      <button
+                        class="btn btn-success"
+                        angular4-paystack
+                        [paystackOptions]="options"
+                        (paymentInit)="paymentInit()"
+                        (onClose)="paymentCancel()"
+                        (callback)="paymentDone($event)"
+                      >
+                        Pay with Paystack
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

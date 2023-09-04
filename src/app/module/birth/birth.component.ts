@@ -20,14 +20,14 @@ export class BirthComponent implements OnInit{
   count:number = 10;
   p:number = 0;
   item:number =0;
-  
+
   constructor(
     private _fb:FormBuilder,
     private apiService: ApiService,
     private router: Router,
     ){
     this.ApplicationForm = this.initializeApplicationFormForm();
-    // this. DeathApplication()
+    this. BirthApplication()
   }
 
   initializeApplicationFormForm(): FormGroup{
@@ -41,9 +41,9 @@ export class BirthComponent implements OnInit{
     })
   }
 
-  DeathApplication(){
+  BirthApplication(){
     this.isloading = true;
-    const url = "/death/assessment/search";
+    const url = "/birth/assessment/search";
     let data = this.ApplicationForm.value;
     this.apiService.post_(url, data).subscribe(res=>{
       this.isloading = false;
@@ -53,7 +53,7 @@ export class BirthComponent implements OnInit{
   }
 
   Search(){
-    this.DeathApplication();
+    this.BirthApplication();
   }
 
   getNextPage(page:any){
@@ -62,7 +62,7 @@ export class BirthComponent implements OnInit{
 
   details(item:any){
     localStorage.setItem('items', JSON.stringify(item));
-    this.router.navigate(['/admin/death-preview'], { replaceUrl: true }).then(() =>{
+    this.router.navigate(['/admin/birth-preview'], { replaceUrl: true }).then(() =>{
       location.reload();
     })
   }

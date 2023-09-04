@@ -1,49 +1,250 @@
-   <!-- Pre-loader start -->
-   <div class="theme-loader">
-    <div class="loader-track">
-        <div class="loader-bar"></div>
-    </div>
+<!-- Pre-loader start -->
+<div class="theme-loader">
+  <div class="loader-track">
+    <div class="loader-bar"></div>
+  </div>
 </div>
 <!-- Pre-loader end -->
 <div id="pcoded" class="pcoded">
-    <div class="pcoded-overlay-box"></div>
-    <div class="pcoded-container navbar-wrapper">
+  <div class="pcoded-overlay-box"></div>
+  <div class="pcoded-container navbar-wrapper">
 
-        <app-main-top-menu></app-main-top-menu>
+    <app-main-top-menu></app-main-top-menu>
 
-        <div class="pcoded-main-container">
-            <div class="pcoded-wrapper">
-                <app-side-nav></app-side-nav>
+    <div class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+        <app-side-nav></app-side-nav>
 
-                <div class="pcoded-content">
-                    <div class="pcoded-inner-content">
-                        <!-- Main-body start -->
-                        <div class="main-body">
-                            <div class="page-wrapper">
+        <div class="pcoded-content">
+          <div class="pcoded-inner-content">
+            <!-- Main-body start -->
+            <div class="main-body">
+              <div class="page-wrapper">
 
-                                <!-- Page-header start -->
-                                <div class="page-wrapper card">
-                                    <div class="card-block">
-                                        <div class="d-flex justify-content-between">
-                                            <h5 class="m-b-10">New Application</h5>
-                                        </div>
-                                        
-                                        <ul class="breadcrumb-title b-t-default p-t-10">
-                                            <li class="breadcrumb-item">
-                                                <a href="/"> <i class="fa fa-home"></i> </a>
-                                            </li>
-                                            <li class="breadcrumb-item"><a href="/user/dashboard">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="/user/birth-certificate">Birth-Certificate</a></li>
-                                            <li class="breadcrumb-item"><a href="/user/birth/application">Application</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h5 class="m-b-10 alert-danger" style="text-align: center; padding: 20px;">Work in progress !!!</h5>
-                            </div>
-                        </div>
+                <!-- Page-header start -->
+                <div class="page-wrapper card">
+                  <div class="card-block">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="m-b-10">New Application</h5>
                     </div>
+
+                    <ul class="breadcrumb-title b-t-default p-t-10">
+                      <li class="breadcrumb-item">
+                        <a href="/"> <i class="fa fa-home"></i> </a>
+                      </li>
+                      <li class="breadcrumb-item"><a href="/user/dashboard">Dashboard</a></li>
+                      <li class="breadcrumb-item"><a href="/user/birth-certificate">Birth-Certificate</a></li>
+                      <li class="breadcrumb-item"><a href="/user/birth/application">Application</a></li>
+                    </ul>
+                  </div>
                 </div>
-                                                
+                <!-- Page-header end -->
+                <!-- Basic Form Inputs card start -->
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-header-right"><i
+                      class="icofont icofont-spinner-alt-5"></i></div>
+
+                    <div class="card-header-right">
+                      <i class="icofont icofont-spinner-alt-5"></i>
+                    </div>
+
+                  </div>
+                  <form [formGroup]='ApplicationForm' (ngSubmit)='Save()'>
+                    <div class="card-block">
+                      <h4 class="sub-title" style="text-align: center;">BIRTH APPLICATION</h4>
+                      <div class="row ">
+
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4 has-danger">
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="Baby First Name"
+                                     formControlName="babyFirstName">
+                              <!-- <div class="col-form-label">Success! You've done it.</div> -->
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="Baby Last Name"
+                                     formControlName="babyLastName">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="Baby Middle Name"
+                                     formControlName="babyMiddleName">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4 has-danger">
+                              <label for="">Gender</label>
+                              <select
+                                name="relationship"
+                                formControlName="gender"
+                                class="form-control form-txt-success">
+                                <option>Select Baby's Sex</option>
+                                <option>MALE</option>
+                                <option >FEMALE</option>
+                              </select>
+                              <!-- <div class="col-form-label">Success! You've done it.</div> -->
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="sub-title"></h4>
+
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4 has-danger">
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="Fathers First Name"
+                                     formControlName="fatherFirstName">
+                              <!-- <div class="col-form-label">Success! You've done it.</div> -->
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="Fathers Last Name"
+                                     formControlName="fatherLastName">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="fathers Middle Name"
+                                     formControlName="fatherMiddleName">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="sub-title"></h4>
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="Address"
+                                     formControlName="address">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="city"
+                                     formControlName="city">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="local Government area"
+                                     formControlName="lga">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="sub-title"></h4>
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="State"
+                                     formControlName="state">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="sub-title"></h4>
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4">
+                              <label for="">Weight</label>
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="Weight At Birth"
+                                     formControlName="weight">
+                            </div>
+                            <div class="col-sm-4">
+                              <label for="">Time of Birth</label>
+                              <input type="time"
+                                     class="form-control form-txt-success"
+                                     formControlName="time">
+                            </div>
+                            <div class="col-sm-4">
+                              <label for="">Approval Hospital</label>
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="Name of hospital"
+                                     formControlName="hospital">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="sub-title"></h4>
+                        <div class="col-sm-12 mobile-inputs">
+                          <div class="form-group row">
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-danger"
+                                     placeholder="Mothers First Name"
+                                     formControlName="motherFirstName">
+                            </div>
+                            <div class="col-sm-4">
+                              <input type="text"
+                                     class="form-control form-txt-success"
+                                     placeholder="Mother last Name"
+                                     formControlName="motherLastName">
+                            </div>
+                            <div class="col-sm-4">
+                              <select
+                                name="relationship"
+                                formControlName="relationship"
+                                id=""
+                                class="form-control form-txt-success">
+                                <option>Select Applicant's Relationship with Baby</option>
+                                <option >Sister</option>
+                                <option>Brother</option>
+                                <option>Mother</option>
+                                <option>Father</option>
+                                <option>Neice</option>
+                                <option >Nephew</option>
+                                <option>Cousin</option>
+                                <option>Uncle</option>
+                                <option>Aunt</option>
+                              </select>
+                            </div>
+                          </div>
+                          <h4 class="sub-title"></h4>
+                          <div class="col-sm-12 mobile-inputs">
+                            <div class="form-group row">
+                              <div class="col-sm-4">
+                                <input type="text"
+                                       class="form-control form-txt-danger"
+                                       placeholder="Applicant's phone number"
+                                       formControlName="phoneNumber">
+                              </div>
+                              <div class="col-sm-4">
+                                <input type="text"
+                                       class="form-control form-txt-success"
+                                       placeholder="Alternative phone number"
+                                       formControlName="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row filter" style="margin-top: 30px;">
+                          <div class="col-sm-12 mobile-inputs d-flex justify-content-between">
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                            <button class="btn btn-success">Submit for Approval</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+
+      </div>
     </div>
+  </div>

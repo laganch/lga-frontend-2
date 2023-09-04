@@ -89,26 +89,26 @@
                                                     <th>Date of Application:</th>
                                                     <th>{{applications?.createdAt | date}}</th>
                                                 </tr>
-                                                
+
                                             </thead>
                                         </table>
-                                        
+
                                         <div class="d-flex justify-content-between" *ngIf="applications?.approvalStatus =='PENDING'">
                                             <button type="button" data-toggle="modal" class="btn btn-success"  data-toggle="modal"data-target="#approveModalCenter">
                                                 Approve Assessment
                                             </button>
-                
+
                                             <button type="button" data-toggle="modal"class="btn btn-danger"  data-toggle="modal"data-target="#rejectModalCenter" style="margin: 0 10px;">
                                                 Query Assessment
                                             </button>
                                         </div>
-                                        
+
                                         <div class="d-flex justify-content-end"  *ngIf="applications?.approvalStatus =='APPROVED' && applications?.paymentStatus=='PAID'">
                                             <button type="button" class="btn btn-success" (click)="printSingle(applications?.id, 'BIRTH')">
                                                 Dowload Certificate
                                             </button>
                                         </div>
-                                        
+
                                         <div class="d-flex justify-content-end"  *ngIf="applications?.approvalStatus =='APPROVED' && applications?.paymentStatus=='NOT_PAID' ">
                                             <button
                                             class="btn btn-success"
@@ -128,11 +128,11 @@
                         </div>
                     </div>
                 </div>
-                                                
+
             </div>
         </div>
     </div>
-    
+
 <div class="modal fade" id="approveModalCenter" tabindex="-1" role="dialog" aria-labelledby="approveModalCenter" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -185,7 +185,7 @@
                     Yes
                 </button>
             </div>
-            
+
         </div>
     </div>
 </div>
